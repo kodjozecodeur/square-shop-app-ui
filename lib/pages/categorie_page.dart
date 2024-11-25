@@ -31,7 +31,27 @@ class CategoryPage extends StatelessWidget {
         ],
       ),
       backgroundColor: const Color(0xFFFFFFFF),
-      appBar: appBar(),
+      appBar: AppBar(
+        shadowColor: const Color(0xFF333333),
+        elevation: 1,
+        backgroundColor: const Color(0xFFFFFFFF),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left)),
+        title: const Text(
+          "All categories",
+          style: TextStyle(),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -182,25 +202,6 @@ class CategoryPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  AppBar appBar() {
-    return AppBar(
-      shadowColor: const Color(0xFF333333),
-      elevation: 1,
-      backgroundColor: const Color(0xFFFFFFFF),
-      title: const Text(
-        "All categories",
-        style: TextStyle(),
-      ),
-      centerTitle: true,
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.search),
-        ),
-      ],
     );
   }
 }

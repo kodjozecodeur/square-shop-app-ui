@@ -31,6 +31,14 @@ class ProductView extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left)),
+        shadowColor: const Color(0xFF333333),
+        elevation: 1,
+        backgroundColor: const Color(0xFFFFFFFF),
         title: const Text(
           "Shoes",
           style: TextStyle(),
@@ -47,6 +55,9 @@ class ProductView extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            const SizedBox(
+              height: 20,
+            ),
             const CustomTextField(),
             const ItemDetail(),
             //horizontal divider
